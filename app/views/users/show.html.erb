@@ -1,12 +1,5 @@
 <h1>Welcome <%= @user.email %> </h1>
-<p>
-  <%= @session %> is currently logged on
-</p>
-
-<p>
-  <img src="<%= @user.image_url %>" alt="" />
-</p>
-
-<p>
-  <%= link_to "See your Cohorts", user_memberships_path(@user.id) %>
-</p>
+<p><%= @session %> is currently logged on</p>
+<p><img src="<%= @user.image_url %>" alt="" /></p>
+<p><%= link_to "See your Cohorts", user_memberships_path(@user.id) %></p>
+<p><%= link_to "See All Cohorts", cohorts_path %></p>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resource :session
 
   get 'welcome' => 'users#welcome'
+  get 'sign_in' => 'users#sign_in'
+  post 'users/:id' => 'users#login'
 
   root 'users#welcome'
 end
