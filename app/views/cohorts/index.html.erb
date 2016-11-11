@@ -1,5 +1,6 @@
 <h1>All the cohorts</h1>
 
 <% @cohorts.each do |cohort| %>
-<p><%=cohort.cohort_type%><%= cohort.name %></p>
+  <p><%=cohort.cohort_type%><%= cohort.name %></p>
+  <p><%= link_to cohort.cohort_type, cohort_path(cohort)  %></p>
 <% end %>

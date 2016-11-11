@@ -1,4 +1,4 @@
 class Membership < ApplicationRecord
-  belongs_to :users
-  belongs_to :cohorts
+  belongs_to :user
+  belongs_to :cohort
 end

@@ -1,0 +1,4 @@
+<h1><%= @user.email %> Cohorts</h1>
+<% @cohorts.each do |cohort| %>
+  <p><%= cohort.cohort_type %> <%= cohort.name %></p>
+<% end %>

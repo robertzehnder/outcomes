@@ -4,5 +4,9 @@
 </p>
 
 <p>
-  <img src="<%= @user.image_url %>" alt="" />  
+  <img src="<%= @user.image_url %>" alt="" />
+</p>
+
+<p>
+  <%= link_to "See your Cohorts", user_memberships_path(@user.id) %>
 </p>
