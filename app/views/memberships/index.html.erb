@@ -1,4 +1,5 @@
 <h1><%= @user.email %> Cohorts</h1>
 <% @cohorts.each do |cohort| %>
   <p><%= cohort.cohort_type %> <%= cohort.name %></p>
+  <p><%= link_to "Show all students", cohort_path(cohort.id) %></p>
 <% end %>

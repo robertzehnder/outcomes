@@ -2,4 +2,6 @@
 <p><%= @session %> is currently logged on</p>
 <p><img src="<%= @user.image_url %>" alt="" /></p>
 <p><%= link_to "See your Cohorts", user_memberships_path(@user.id) %></p>
-<p><%= link_to "See All Cohorts", cohorts_path %></p>
+<p><%= link_to "See All Cohorts", user_cohorts_path(@user) %></p>
+<p><%= link_to "Edit Your Profile", edit_user_path(@user) %></p>
+<p><%= link_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></p>
