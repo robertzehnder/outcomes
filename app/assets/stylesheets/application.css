@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ html,body {
+     margin:0;
+     padding:0;
+     height:100%; /* needed for container min-height */
+     background-image: url("https://www.connect2classes.com/wp-content/uploads/2016/04/General-Assembly-class-2.jpg");
+     background-size: cover;
+     font-family:arial,sans-serif;
+     font-size:small;
+     color:#666;
+ }
