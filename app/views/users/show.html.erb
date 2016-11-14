@@ -1,7 +1,39 @@
-<h1>Welcome <%= @user.email %> </h1>
-<p><%= @session %> is currently logged on</p>
-<p><img src="<%= @user.image_url %>" alt="" /></p>
-<p><%= link_to "See your Cohorts", user_memberships_path(@user.id) %></p>
-<p><%= link_to "See All Cohorts", user_cohorts_path(@user) %></p>
-<p><%= link_to "Edit Your Profile", edit_user_path(@user) %></p>
-<p><%= link_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<div class="profile">
+  <div class="profLeft">
+    <p><img src="<%= @user.image_url %>" alt="" /></p>
+    <h2><%= @user.email %></h2>
+    <p><%= link_to "See your Cohorts", user_memberships_path(@user.id) %>
+      <%= link_to "See All Cohorts", user_cohorts_path(@user) %></p>
+      <p><%= link_to "Edit Your Profile", edit_user_path(@user) %>
+        <%= link_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+  <div class="profRight">
+<select id="weekDD" name="">
+  <%= options_for_select(
+    [
+      ['Week1', 1],
+      ['Week2', 2],
+      ["Week3", 3]
+    ], 3
+  ) %>
+</select>
+
+    <% @roadmaps.each do |roadmap| %>
+    <div class="week<%= roadmap.week %> week">
+      <h2>Week: <%= roadmap.week %></h2>
+      <p><b>Title:</b> <%= roadmap.title %></p>
+      <p><b>Content:</b> <%= roadmap.content %></p>
+      <p><b>Goal:</b> <%= roadmap.goal %></p>
+      <p><b>Theme:</b> <%= roadmap.theme %></p>
+      <p><b>Materials:</b> <%= roadmap.materials %></p>
+      <p><b>Work Due:</b> <%= roadmap.workDue %></p>
+      <p><b>Homework:</b> <%= roadmap.homework %></p>
+      <p><b>Small Group:</b> <%= roadmap.smallGroup %></p>
+      <p><b>Resources:</b> <%= roadmap.resources %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="clear">
+
+  </div>
+</div>

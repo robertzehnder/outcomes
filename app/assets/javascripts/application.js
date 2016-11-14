@@ -9,8 +9,19 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$( document ).ready(function() {
+  console.log("shablam")
+  $('.week').hide();
+  $('.week1').show();
+    $("#weekDD").change(function() {
+      console.log("Hitting the function")
+        let newID = '.week' + $("#weekDD option:selected").val();
+        console.log(newID)
+        $('.week').hide();
+        $(newID).show();
+    });
+});

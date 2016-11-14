@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @session = session[:name]
+    @roadmaps = Roadmap.all
   end
 
   def new

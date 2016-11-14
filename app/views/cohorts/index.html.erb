@@ -1,8 +1,9 @@
-<h1>All the cohorts</h1>
-
-<% @cohorts.each do |cohort| %>
+<div class="profile">
+  <h1>All the cohorts</h1>
+  <% @cohorts.each do |cohort| %>
   <p><%=cohort.cohort_type%><%= cohort.name %></p>
   <p><%= link_to cohort.cohort_type, cohort_path(cohort)  %></p>
   <p><%= link_to "Join this Cohort", new_user_cohort_membership_path(@user.id,cohort.id)  %></p>
   <p><%= link_to 'Delete Cohort', user_cohort_path(@user.id,cohort.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<% end %>
+  <% end %>
+</div>

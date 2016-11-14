@@ -4,11 +4,16 @@
     <title>Outcomes</title>
     <%= csrf_meta_tags %>
 
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />`
+    <%= javascript_include_tag 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="topBar">
+    <%=  link_to image_tag('http://static-assets.generalassemb.ly/logos/generalassembly-open-graph.png'), "/"  %>
+    </div>
     <%= yield %>
   </body>
 </html>

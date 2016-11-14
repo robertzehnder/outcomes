@@ -1,5 +1,7 @@
-<h1><%= @cohort.cohort_type %> <%= @cohort.name %></h1>
+<div class="profile">
+  <h1><%= @cohort.cohort_type %> <%= @cohort.name %></h1>
   <% @cohort.users.each do |student| %>
   <h4>Email: <%= student.email %></h4>
   <p>Password: <%= student.password %></p>
-<% end %>
+  <% end %>
+</div>
