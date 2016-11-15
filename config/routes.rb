@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   end
   resources :cohorts, only: [:show]
   resource :session
-  get "homework" => 'users#homework'
+
+  get "homework/:user_id/brand/:id" => 'homeworks#brand'
+  patch "homework/:user_id/brand/:id" => "homeworks#brandUpdate"
+  get "homework/:id" => 'users#homework'
   get 'welcome' => 'users#welcome'
   get 'back' => 'application#back'
   root 'users#welcome'

@@ -1,0 +1,27 @@
+<div class="profile">
+  <%= form_for [@user,@homework], :url => "/homework/#{@user.id}/brand/#{@homework.id}", method: :put do |f|%>
+
+  <p><%= f.label :brand_strengths %>
+    <%= f.text_field :brand_strengths %></p>
+
+    <p><%= f.label :brand_values %>
+      <%= f.text_field :brand_values %></p>
+
+      <p><%= f.label :brand_interests %>
+        <%= f.text_field :brand_interests %></p>
+
+        <p><%= f.label :brand_personality %>
+          <%= f.text_field :brand_personality %></p>
+
+          <p><%= f.label :brand_achievement %>
+            <%= f.text_field :brand_achievement %></p>
+
+            <p>
+              <%= f.label :brand_mentor %>
+              <%= f.text_field :brand_mentor %>
+            </p>
+
+            <p><%= f.submit "Submit" %></p>
+            <% end %>
+
+</div>
