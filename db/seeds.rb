@@ -9,6 +9,7 @@ User.destroy_all
 Membership.destroy_all
 Cohort.destroy_all
 Roadmap.destroy_all
+Link.destroy_all
 
 user1 = User.create(email: "Man in Black", password: "password", image_url: "http://images.hellogiggles.com/uploads/2016/10/16152406/Screen-Shot-2016-10-16-at-10.23.38-PM-700x525.png")
 user2 = User.create(email: "Dolores", password: "password", image_url: "https://www.neondystopia.com/wp-content/uploads/2016/10/who-is-arnold-and-what-is-he-making-the-hosts-of-westworld-do-dolores-remembers-the-ch-1160716.jpeg")
@@ -85,3 +86,6 @@ Weekly Blogpost ' ,
 smallGroup: 'NO SMALL GROUPS THIS WEEK',
 resources: "Resume; Cover Letters & Emails; Social Media; Writing"
 )
+
+link1 = Link.create(title: "test1", link_type: "resource", address: "http://www.espn.com/", roadmap_id: 2)
+link2 = Link.create(title: "Homework", link_type: "homework", address: "cnn.com", roadmap_id: 2)

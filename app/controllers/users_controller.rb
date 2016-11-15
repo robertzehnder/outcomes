@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @session = session[:name]
     @roadmaps = Roadmap.all
+    @link = Link.last
   end
 
   def new
@@ -38,6 +39,13 @@ class UsersController < ApplicationController
     @user.memberships.destroy
     @user.destroy
     redirect_to '/'
+  end
+
+  def homework
+    @user = User.first
+    @link = Link.where(link_type: 'homework')
+    @users = User.all
+    puts @link.inspect
   end
 
   private

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :cohorts, only: [:show]
   resource :session
-
+  get "homework" => 'users#homework'
   get 'welcome' => 'users#welcome'
   get 'back' => 'application#back'
   root 'users#welcome'

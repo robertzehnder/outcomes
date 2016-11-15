@@ -1,5 +1,5 @@
 <div class="profile">
-  <%= form_for new_user_homework_path do |f|%>
+  <%= form_for [@user,@homework] do |f|%>
 
     <p><%= f.label :brand_strengths %>
     <%= f.text_field :brand_strengths %></p>

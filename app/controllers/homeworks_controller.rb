@@ -4,8 +4,13 @@ class HomeworksController < ApplicationController
     @homework = Homework.new
   end
 
+  def show
+    @homework = Link.find(type: "homework")
+  end
+
   def create
     @homework = Homework.create!(homework_params)
+    @user = User.find(params[:user_id])
     redirect_to user_path(@user)
   end
 
