@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string "email"
       t.string "password"
       t.string "image_url"
+      t.integer "homework_id"
       t.timestamps
     end
   end

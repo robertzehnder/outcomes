@@ -6,15 +6,17 @@
       <%= link_to "See All Cohorts", user_cohorts_path(@user) %></p>
       <p><%= link_to "Edit Your Profile", edit_user_path(@user) %>
         <%= link_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <p><%= link_to "Homework", new_user_homework_path(@user)%> </p>
   </div>
   <div class="profRight">
 <select id="weekDD" name="">
   <%= options_for_select(
     [
-      ['Week1', 1],
-      ['Week2', 2],
-      ["Week3", 3]
-    ], 3
+      ['Week 1', 1],
+      ['Week 2', 2],
+      ["Week 3", 3],
+      ["Week 4", 4]
+    ], 1
   ) %>
 </select>
 

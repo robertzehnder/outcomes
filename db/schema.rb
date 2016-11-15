@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20161113211739) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "homeworks", force: :cascade do |t|
+    t.text     "brand_strengths"
+    t.text     "brand_values"
+    t.text     "brand_interests"
+    t.text     "brand_personality"
+    t.text     "brand_achievement"
+    t.text     "brand_mentor"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "cohort_id"
@@ -48,8 +59,9 @@ ActiveRecord::Schema.define(version: 20161113211739) do
     t.string   "email"
     t.string   "password"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "homework_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
