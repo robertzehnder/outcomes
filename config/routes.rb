@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get "homework/:user_id/brand/:id" => 'homeworks#brand'
   patch "homework/:user_id/brand/:id" => "homeworks#brandUpdate"
+  put "homework/:user_id/brand/:id" => "homeworks#brandUpdate"
   get "homework/:id" => 'users#homework'
   get 'welcome' => 'users#welcome'
   get 'back' => 'application#back'

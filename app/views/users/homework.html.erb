@@ -1,3 +1,5 @@
 <div class="profile">
-  <p><%= link_to @link.first.title, '/users/' + "#{@user.id}" + "/homeworks/new" %></p>
+  <% @links.each do |link| %>
+  <p><%= link_to link.title, "/homework/#{@user.id}/brand/#{@user.homework_id}" %></p>
+  <% end %>
 </div>

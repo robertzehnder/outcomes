@@ -42,10 +42,9 @@ class UsersController < ApplicationController
   end
 
   def homework
-    @user = User.first
-    @link = Link.where(link_type: 'homework')
+    @user = User.find(params[:id])
+    @links = Link.where(link_type: 'homework')
     @users = User.all
-    puts @link.inspect
   end
 
   private
