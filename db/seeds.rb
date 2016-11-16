@@ -87,5 +87,21 @@ smallGroup: 'NO SMALL GROUPS THIS WEEK',
 resources: "Resume; Cover Letters & Emails; Social Media; Writing"
 )
 
-link1 = Link.create(title: "test1", link_type: "resource", address: "http://www.espn.com/", roadmap_id: 2)
-link2 = Link.create(title: "Homework", link_type: "homework", address: "cnn.com", roadmap_id: 2)
+users = User.all
+
+users.each do |user|
+homeworkX = Homework.create(
+  brand_strengths: "",
+  brand_values: "",
+  brand_interests: "",
+  brand_personality: "",
+  brand_achievement: "",
+  brand_mentor: ""
+  )
+
+  user.homework_id = homeworkX.id
+  user.save
+end
+
+link1 = Link.create(title: "DC Tech Meetups", link_type: "resource", address: "https://hackpad.com/How-to-Hack-the-DC-Tech-Ecosystem-EYfL7X7gepL", roadmap_id: 2)
+# link2 = Link.create(title: "Homework", link_type: "homework", address: "/homework/#{@user.id}/brand/#{@user.homework_id}", roadmap_id: 2)
