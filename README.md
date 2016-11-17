@@ -1,25 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Technology Stack
 
-Things you may want to cover:
+Ruby on Rails
+CSS / SASS
+Bootstrap
+Postgres
+Installation instructions
 
-* Ruby version
+Clone down repo
+Create the database and run the database migrations
+Seed the database with the included Seeds.rb
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# outcomes
