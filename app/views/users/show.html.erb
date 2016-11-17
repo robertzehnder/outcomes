@@ -8,6 +8,7 @@
       <%= button_to "Edit Your Profile", edit_user_path(@user) , :class => "buttonsProfile", :method => :get %>
       <%= button_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } , :class => "buttonsProfile" %>
       <%= button_to "Homework", "/homework/#{@user.id}", :class => "buttonsProfile", :method => :get %>
+      <%= button_to "Meetups", "/meetup", :class => "buttonsProfile", :method => :get %>
     </div>
   </div>
   <div class="profRight">

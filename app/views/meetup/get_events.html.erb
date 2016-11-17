@@ -1,6 +1,14 @@
 
 <div class="formHolder">
-<% @events.each do |event| %>
-  <p><%= event["name"]["text"] %></p>
+<h1>Upcoming DC Technology Events</h1>
+<% @event.events.each do |event| %>
+    <h2><%=link_to event["name"]["text"], event["url"]%></h2>
+    <b>Time: </b> <%= event["start"]["local"] %>
+    <b>Place</b> <%= @event.venues[0] %> <%= @event.venues[1] %> <%= @event.venues[2] %>
+    <h2>Description</h2>
+      <p><%= event["description"]["text"] %> </p>
+
+
+
   <% end %>
 </div>
