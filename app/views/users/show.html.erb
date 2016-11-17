@@ -2,11 +2,13 @@
   <div class="profLeft">
     <p><img src="<%= @user.image_url %>" alt="" /></p>
     <h2><%= @user.email %></h2>
-    <p><%= link_to "See your Cohorts", user_memberships_path(@user.id) %>
-      <%= link_to "See All Cohorts", user_cohorts_path(@user) %></p>
-      <p><%= link_to "Edit Your Profile", edit_user_path(@user) %>
-        <%= link_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <p><%= link_to "Homework", "/homework/#{@user.id}"%> </p>
+    <div class="buttonFlex">
+      <%= button_to "See Your Cohorts", user_memberships_path(@user.id) , :class => "buttonsProfile", :method => :get %>
+      <%= button_to "See All Cohorts", user_cohorts_path(@user) , :class => "buttonsProfile", :method => :get %>
+      <%= button_to "Edit Your Profile", edit_user_path(@user) , :class => "buttonsProfile", :method => :get %>
+      <%= button_to 'Delete Profile', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } , :class => "buttonsProfile" %>
+      <%= button_to "Homework", "/homework/#{@user.id}", :class => "buttonsProfile", :method => :get %>
+    </div>
   </div>
   <div class="profRight">
 <select id="weekDD" name="">
@@ -32,7 +34,7 @@
       <p><b>Homework:</b> <%= roadmap.homework %></p>
       <p><b>Small Group:</b> <%= roadmap.smallGroup %></p>
       <p><b>Resources:</b> <%= roadmap.resources %></p>
-      <p>Links: <%= link_to @link.title, @link.address, :target => "_blank" %></p>
+      <p><b>Links:</b> <%= link_to @link.title, @link.address, :target => "_blank" %></p>
     </div>
     <% end %>
   </div>

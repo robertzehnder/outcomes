@@ -1,5 +1,8 @@
 <div class="formHolder">
   <h1>Edit Your Account</h1>
+  <div class="navigation">
+    <%= button_to "Back to Profile", user_path(@user), :class => "buttonsProfile", :method => :get %>
+  </div>
     <div class="">
       <%= render 'form' %>
     </div>

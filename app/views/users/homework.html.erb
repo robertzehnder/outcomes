@@ -1,4 +1,9 @@
-<div class="profile">
+<div class="formHolder">
+  <h1> <%= @user.email %>'s Homework</h1>
+  <div class="navigation">
+    <%= button_to "Back to Profile", user_path(@user), :class => "buttonsProfile", :method => :get %>
+  </div>
+  <h2>Assignments</h2>
   <% @links.each do |link| %>
   <p><%= link_to link.title, "/homework/#{@user.id}/brand/#{@user.homework_id}" %></p>
   <% end %>

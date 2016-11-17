@@ -17,19 +17,23 @@ user3 = User.create(email: "Teddy", password: "password", image_url: "http://ima
 user4 = User.create(email: "Maeve", password: "password", image_url: "http://www.flickeringmyth.com/wp-content/uploads/2016/10/Westworld-12-600x901.jpg")
 user5 = User.create(email: "Bernard", password: "password", image_url: "https://nypdecider.files.wordpress.com/2016/09/westworld-wright.jpg?quality=90&strip=all&w=600")
 
-wdi = Cohort.create(cohort_type: "wdi", name: "13")
-uxdi = Cohort.create(cohort_type: "uxdi", name: "4")
+wdi = Cohort.create(cohort_type: "WDI", name: "13")
+uxdi = Cohort.create(cohort_type: "UXDI", name: "4")
 
-wdi_users = User.all.sample 3
+wdi_users = User.all
 
 wdi_users.each do |user|
-  Membership.create(user_id: user.id, cohort_id: wdi.id)
+  Membership.create(user_id: wdi_users.sample.id, cohort_id: wdi.id)
+  Membership.create(user_id: wdi_users.sample.id, cohort_id: wdi.id)
+  Membership.create(user_id: wdi_users.sample.id, cohort_id: wdi.id)
 end
 
-uxdi_users = User.all.sample 3
+uxdi_users = User.all
 
 uxdi_users.each do |user|
-  Membership.create(user_id: user.id, cohort_id: uxdi.id)
+  Membership.create(user_id: uxdi_users.sample.id, cohort_id: uxdi.id)
+  Membership.create(user_id: uxdi_users.sample.id, cohort_id: uxdi.id)
+  Membership.create(user_id: uxdi_users.sample.id, cohort_id: uxdi.id)
 end
 
 
@@ -104,4 +108,4 @@ homeworkX = Homework.create(
 end
 
 link1 = Link.create(title: "DC Tech Meetups", link_type: "resource", address: "https://hackpad.com/How-to-Hack-the-DC-Tech-Ecosystem-EYfL7X7gepL", roadmap_id: 2)
-# link2 = Link.create(title: "Homework", link_type: "homework", address: "/homework/#{@user.id}/brand/#{@user.homework_id}", roadmap_id: 2)
+link2 = Link.create(title: "Brand Statement", link_type: "homework", address: "", roadmap_id: 3)

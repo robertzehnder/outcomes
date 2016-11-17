@@ -1,7 +1,15 @@
 <div class="formHolder">
-  <h1><%= @cohort.cohort_type %> <%= @cohort.name %></h1>
-  <% @cohort.users.each do |student| %>
-  <h4>Email: <%= student.email %></h4>
-  <p>Password: <%= student.password %></p>
-  <% end %>
+  <h1>Students of <%= @cohort.cohort_type %> <%= @cohort.name %></h1>
+
+  <div class="studentContainer">
+
+      <% @cohort.users.each do |student| %>
+      <div class="xxx">
+      <p><%= image_tag(student.image_url, size: "200x150") %></p>
+      <h4>Name: <%= student.email %></h4>
+      <p>Email: <%= student.email %>@ga.com</p>
+      <p><%= link_to "View Profile", user_path(student.id) %></p>
+    </div>
+    <% end %>
+  </div>
 </div>

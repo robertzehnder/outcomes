@@ -6,11 +6,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @session = session[:name]
     @roadmaps = Roadmap.all
-    @link = Link.last
+    @link = Link.first
   end
 
   def new
     @user = User.new
+    @homework = Homework.new
   end
 
   def edit
@@ -25,8 +26,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
-    session[:name] = @user.email
+    @user = User.create(user_params)
+    @user.homework_id = @user.id
+    @user.save
+    puts @user.inspect
     redirect_to user_path(@user)
   end
 
@@ -37,7 +40,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.memberships.destroy
+    @memberships = Membership.where(user_id: @user.id)
+    @memberships.each do |x|
+      x.destroy
+    end
     @user.destroy
     redirect_to '/'
   end
@@ -50,6 +56,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :image_url)
+    params.require(:user).permit(:email, :password, :image_url, :homework_id)
   end
 end

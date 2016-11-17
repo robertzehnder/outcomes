@@ -1,9 +1,12 @@
 <div class="formHolder">
   <h1>All the cohorts</h1>
+  <div class="navigation">
+    <%= button_to "Back to Profile", user_path(@user), :class => "buttonsProfile", :method => :get %>
+  </div>
   <% @cohorts.each do |cohort| %>
-  <h3><%=cohort.cohort_type%><%= cohort.name %></h3>
-  <p><%= link_to "View all Students", cohort_path(cohort)  %></p>
-  <p><%= link_to "Join this Cohort", new_user_cohort_membership_path(@user.id,cohort.id)  %></p>
-  <p><%= link_to 'Delete Cohort', user_cohort_path(@user.id,cohort.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <h2><%=cohort.cohort_type%> <%= cohort.name %></h2>
+  <%= button_to "View all Students", cohort_path(cohort), :class => "buttonsProfile", :method => :get %>
+  <%= button_to "Join this Cohort", new_user_cohort_membership_path(@user.id,cohort.id), :class => "buttonsProfile", :method => :get %>
+  <%= button_to 'Delete Cohort', user_cohort_path(@user.id,cohort.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => "buttonsProfile"%>
   <% end %>
 </div>

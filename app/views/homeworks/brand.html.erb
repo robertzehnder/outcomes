@@ -1,4 +1,9 @@
-<div class="profile">
+<div class="formHolder">
+  <h2>Build Your Brand Statement</h2>
+  <div class="navigation">
+    <%= button_to "Back to Profile", user_path(@user), :class => "buttonsProfile", :method => :get %>
+    <%= button_to "Back to Homework", "/homework/#{@user.id}", :class => "buttonsProfile", :method => :get %>
+  </div>
   <%= form_for [@user,@homework], :url => "/homework/#{@user.id}/brand/#{@homework.id}", method: :put do |f|%>
 
   <p><%= f.label :brand_strengths %>

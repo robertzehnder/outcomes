@@ -1,8 +1,11 @@
-<div class="profile">
+<div class="formHolder">
   <h1><%= @user.email %> Cohorts</h1>
+  <div class="navigation">
+    <%= button_to "Back to Profile", user_path(@user), :class => "buttonsProfile", :method => :get %>
+  </div>
   <% @cohorts.each do |cohort| %>
-  <p><%= cohort.cohort_type %> <%= cohort.name %></p>
-  <p><%= link_to "Show all students", cohort_path(cohort.id) %></p>
+  <h3><%= cohort.cohort_type %> <%= cohort.name %></h3>
+  <p><%= button_to "Show all students", cohort_path(cohort.id), :class => "buttonsProfile", :method => :get  %></p>
   <% end %>
 
 </div>
