@@ -1,7 +1,7 @@
 # README
 
 Technology Stack
-
+--
 Ruby on Rails
 CSS
 J Query
