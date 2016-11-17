@@ -1,5 +1,9 @@
 # README
 
+About
+--
+This is a POC as potential alternative to the various Google Docs that the outcomes team uses to manage their information.
+
 Technology Stack
 --
 Ruby on Rails
