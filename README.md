@@ -3,12 +3,14 @@
 Technology Stack
 
 Ruby on Rails
-CSS / SASS
-Bootstrap
+CSS
+J Query
+Rails APIs
 Postgres
-Installation instructions
 
-Clone down repo
-Create the database and run the database migrations
-Seed the database with the included Seeds.rb
+Installation instructions
+--
+1. Clone down repo
+2. Create the database and run the database migrations
+3. Seed the database with the included Seeds.rb
 
